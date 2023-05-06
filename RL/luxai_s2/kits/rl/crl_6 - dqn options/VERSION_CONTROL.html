@@ -1,0 +1,91 @@
+
+###
+crl folder
+###
+
+    ###
+    port of example kit to CleanRL/PPO
+    ###
+    main
+        agent.py
+        ppo_train
+            wrapper/SimpleUnitObservationWrapper/SimpleUnitObservationWrapper
+           
+    ###
+    added one feature, with the water cargo of the mother factory
+    ###                
+    main_1
+       agent_1.py        
+       ppo_train_1.py
+           wrapper/SimpleUnitObservationWrapper_1/SimpleUnitObservationWrapper_1
+    
+    ###
+    removed unnessary features from example kit 
+    ###
+    main_1_1
+       agent_1_1.py        
+       ppo_train_1_1.py
+           wrapper/SimpleUnitObservationWrapper_1/SimpleUnitObservationWrapper_1_1
+
+    ###
+    removed unnessary features from example kit 
+    added ice tiles in immediate 3x3 neighborhood and ice total in the 4 quadrants
+    ###
+    main_1_2
+       agent_1_2.py        
+       ppo_train_1_2.py
+           wrapper/SimpleUnitObservationWrapper_1/SimpleUnitObservationWrapper_1_2
+
+    ###
+    multiple units in agent, no change to training method (first unit of first factory is being trained)
+    use ppo_train model
+    ###                
+    main_2_0
+       agent_2_0.py      with obs_for_units() function instead of SimpleUnitObservationWrapper  
+
+    ###
+    multiple units in agent, no change to training method (first unit of first factory is being trained)
+    use ppo_train_1 model with extra factory water feature
+    ###                
+    main_2_1
+       agent_2_1.py      with obs_for_units() function instead of SimpleUnitObservationWrapper   
+
+
+    ###
+    multiple units in agent, no change to training method (first unit of first factory is being trained)
+    use ppo_train_1_1 model with removed unnecessary feature
+    ###                
+    main_2_1_1
+       agent_2_1_1.py      with obs_for_units() function instead of SimpleUnitObservationWrapper   
+
+    ###
+    multiple units in agent, no change to training method (first unit of first factory is being trained)
+    use ppo_train_1_2 model with removed unnecessary feature and added 3x3 neighborhood and quadrants
+    ###                
+    main_2_1_2
+       agent_2_1_2.py      with obs_for_units() function instead of SimpleUnitObservationWrapper   
+
+
+    ###
+    each factory spawns first a heavy unit, and then as many light units as resources permits
+    ###                
+    ppo_train_3_1 model:
+        -observations with quadrants and 3x3 surroundings with water only
+        -multiple units are controlled during training, but only first unit is used by ppo
+    main_3_1
+       agent_3_1.py      
+        wrapper/controllers_3/SimpleUnitDiscreteController_3  
+        
+    ###
+    each factory spawns first a heavy unit, and then as many light units as resources permits
+    observations are richer than version 3_1 with 
+        unit type
+        cargo details
+        units in 3x3 neighborhood
+        ore
+        rubble and lichen
+    ###                
+    ppo_train_3_2 model: same as 3_1
+    main_3_2: 
+       agent_3_2.py      
+        wrapper/controllers_3/SimpleUnitDiscreteController_3          
